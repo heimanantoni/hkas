@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-------estilos de boostrap------------------------------------------------------->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <!-------estilos personales--------------------------------------------------------------------------------------------->
+    <link rel="stylesheet" href="./zstyle.css">
+
+    <!-----stilos del date picker-------------------------------------------------------------------------------------------->
+    <link rel="stylesheet" href="./bootstrap-datepicker.standalone.css">
+
+
+
+    <!----------------------------------------------------------------------------------------------------------------------->
+    <!-- bootstrap -->
+
+
+
+
+    <title>Hkas</title>
+</head>
+
+<body>
+
+    <header class="header" id="header">
+        <div class="containerLogo">
+            <img src="./capadmin logo.png" alt="logo">
+        </div>
+        <div class="containerUser">
+            <i class="fas fa-user userIcon"></i>
+        </div>
+
+    </header>
+    <section class="global" id="glogal">
+        <section class="globalLeft" id="globalLeft">
+            <button class="btnPayers backgroundColorHkas" id="btnPayers"><i
+                    class="fas fa-check-circle">payers</i></button>
+        </section>
+        <section class="globalRight" id="globalRight">
+            <div class="containerTabs" id="containerTabs">
+                <ul class="nav nav-pills ulTabs" id="pills-tab" role="tablist">
+
+                </ul>
+            </div>
+
+            <!-----------contenedor del contenido de todos los tabs------------------------------------------------->
+
+            <div class="containerForms tab-content" id="nav-tabContent">
+
+                <!----------contenedor de payers----------------------------------->
+                <div name="tabs" class="tab-pane fade  formTablePayer " id="pills-home" role="tabpanel"
+                    aria-labelledby="pills-home-tab">
+                    <p class="PH2Filter">payers > index</p>
+                    <section class="filters">
+                        <h2 class="PH2Filter">Filters</h2>
+
+
+                        <form action="#" id="formSearch">
+                            <div class="form-row formFilter">
+                                <!-- <div class="form-group col-md-5 col-lg-3">
+                                    <label for="selectSearch" class="labelWrite">Select and Write</label>
+                                    <select class="form-control" id="selectSearch">
+                                        <option value="">id</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-5  col-lg-3">
+                                    <label for="inputSearch"></label>
+                                    <input type="text" class="form-control" id="inputSearch">
+
+                                </div> -->
+
+                                <div class="form-group  col-lg-7 ">
+                                    <label for="selectSearch" class="labelWrite">Select and Write</label>
+                                    <div class="input-group selectInput ">
+
+                                        <select class="form-control selectFilter " id="inputGroupSelect04"
+                                            aria-label="Example select with button addon">
+                                            <option class="colorHover" selected>Id</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                        <div class="input-group-append inputFilter">
+                                            <input type="text" class="form-control inputSearch" id="inputSearch">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!------------->
+
+                                <div class="form-group  col-md-12   col-lg-3 ">
+                                    <label for="dateSearch" class="labelWrite">Effective Date</label>
+
+                                    <div class="input-group date datePicker">
+
+                                        <div class="input-group mb-3 containerDateFilter">
+                                            <input type="text" class="form-control"
+                                                aria-label="Amount (to the nearest dollar)" id="dateSearch">
+                                            <i class="fas fa-calendar iconDate colorHkas"></i>
+                                            <div class="input-group-append">
+                                                <!-- <span class="input-group-text"><i class="fas fa-calendar"></i></span> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit"
+                                    class="btn btn-warning btnFilter col-sm-3  col-md-2 col-lg-1">Search</button>
+
+                            </div>
+
+                        </form>
+
+
+                        <p class="PH2Filter">I need an <span>advanced search</span></p>
+
+                    </section>
+
+
+                    <div class="containerBotones">
+                        <button type="button" class="btn btn-outline-primary borderNone colorHover"
+                            id="btnUpdateTable"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-arrow-repeat colorHkas" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+                                <path fill-rule="evenodd"
+                                    d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
+                            </svg></button>
+                        <button type="button"
+                            class="btn btn-primary btnAddPayer backgroundColorHkas colorHover borderNone "
+                            id="btnAddPayer">+ ADD PAYER</button>
+
+                    </div>
+
+                    <div class="containerTable">
+                        <table class="table table-striped table-sm">
+                            <thead style="border-bottom: 2px solid #002a4e !important">
+                                <tr>
+                                    <th style="width: 15%;border-bottom: 2px solid #002a4e  " scope="col">id</th>
+                                    <th style="width: 25%;border-bottom: 2px solid  #002a4e" scope="col">Name</th>
+                                    <th style="border-bottom: 2px solid  #002a4e" scope="col">Effective Date</th>
+                                    <th style="border-bottom: 2px solid  #002a4e" scope="col">Expiration Date</th>
+                                    <th style="border-bottom: 2px solid  #002a4e" scope="col">Medicare Contract ID</th>
+                                    <th style="width: 15% ; border-bottom: 2px solid  #002a4e;" scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="tBody" id="tBody">
+                                <!-- <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>fecha</td>
+                                    <td>Thornton</td>
+                                    <td><i class="fa fa-pen btnEditPayer"></i> <i class="fa fa-gear"></i> <i
+                                            class="fa fa-trash"></i>
+                                    </td>
+                                </tr> -->
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <!-- -------fin contenedor de payers-------------- -->
+                </div>
+
+                <!------contenedor New Payer---formulario---------------------------------------------------------------------------------------->
+                <div name="tabs" class="newPayer tab-pane fade" id="pills-profile" role="tabpanel"
+                    aria-labelledby="pills-profile-tab">
+                    <p>Payers>Index>New</p>
+                    <form id="formNewPayer">
+                        <div class="formFlexContainer">
+                            <section class="payerInformation">
+                                <h4 style="border-bottom: 1px solid #002a4e;">{0}-New</h4>
+                                <h4>Payer Information</h4>
+                                <div class="form-row">
+                                    <!--1)-->
+                                    <div class="form-group col-lg-6">
+                                        <label for="name">Name <span class="requerid">*</span></label>
+                                        <div class="controls">
+                                            <input type="text" class="form-control " id="name" name="name"
+                                                maxlength="30"
+                                                data-validation-required-message="Must match email address entered above">
+                                            <p class="fielReque" id="fielname">Required Fiel.</p>
+                                        </div>
+                                    </div>
+                                    <!--2)-->
+                                    <div class="form-group col-lg-6">
+                                        <label for="neic">NEIC ID <span class="requerid">*</span></label>
+                                        <input type="text" class="form-control " id="neic" name="neic">
+                                        <p class="fielReque" id="fielneic">Required Fiel.</p>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <!--3)-->
+                                    <div class="form-group col-lg-6">
+                                        <label for="tax">TAX ID </label>
+
+                                        <input type="text" class="form-control" id="tax">
+                                    </div>
+                                    <!-- 4) -->
+                                    <div class="form-group col-lg-6">
+                                        <label for="contract">Med. Contract ID </label>
+                                        <input type="text" class="form-control" id="contract">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <!--5)-->
+                                    <div class="form-group date datePicker col-lg-6">
+                                        <label for="effective">Effective Date</label>
+                                        <input type="text"
+                                            class="form-control input-group-addon glyphicon glyphicon-th "
+                                            id="effective">
+                                    </div>
+
+
+                                    <!--6)-->
+                                    <div class="form-group date datePicker col-lg-6">
+                                        <label for="expiration">Expiration Date</label>
+                                        <input type="text"
+                                            class="form-control input-group-addon glyphicon glyphicon-th "
+                                            id="expiration">
+                                    </div>
+
+                                </div>
+                                <div class="form-row">
+                                    <!--7)-->
+                                    <div class="form-group col-lg-6">
+                                        <div class="custom-control custom-switch" value="true">
+                                            <input type="checkbox"
+                                                class="custom-control-input backgroundColorHkas colorHkas" id="switch1">
+                                            <label class="custom-control-label" for="switch1">Is Private
+                                                Pay?</label>
+                                        </div>
+                                    </div>
+                                    <!--8)-->
+                                    <div class="form-group col-lg-6">
+                                        <label for="review">Auto Review Claim</label>
+                                        <div class="input-group ">
+                                            <!-- <input type="text" class="form-control" placeholder="Recipient's username"
+                                                aria-label="Recipient's username" aria-describedby="button-addon2"> -->
+                                            <select class="form-control" id="review">
+                                                <option value="">Select</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-light" style="background-color: white;"
+                                                    type="button" id="button-addon2"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" heigth="auto"
+                                                        fill="currentColor" class="bi bi-arrow-repeat"
+                                                        style="color: black;" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+                                                        <path fill-rule="evenodd"
+                                                            d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
+                                                    </svg></button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- fin de la section payer information-------------------------------------------------------------------------->
+                            </section>
+                            <section class="payerContact">
+                                <h4>Payer Contact</h4>
+                                <div class="form-row">
+                                    <!-- 1) -->
+                                    <div class="form-group col-lg-6">
+                                        <label for="address1">Address 1
+
+                                        </label>
+                                        <input type="text" class="form-control" id="address1">
+                                    </div>
+                                    <!-- 2) -->
+                                    <div class="form-group col-lg-6">
+
+                                        <label for="address2">Address 2</label>
+                                        <input type="text" class="form-control" id="address2">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <!-- 3) -->
+                                    <div class="form-group col-xl-4">
+                                        <label for="city">City </label>
+
+                                        <input type="text" class="form-control" id="city">
+                                    </div>
+                                    <!-- 4) -->
+                                    <div class="form-group col-lg-6 col-xl-4">
+                                        <label for="state">State</label>
+                                        <div class="input-group ">
+                                            <!-- <input type="text" class="form-control" placeholder="Recipient's username"
+                                                aria-label="Recipient's username" aria-describedby="button-addon2"> -->
+                                            <select class="form-control" id="state">
+                                                <option value="">Select</option>
+                                                <option value=2>2</option>
+                                                <option value=3>3</option>
+                                                <option value=4>4</option>
+                                                <option value=5>5</option>
+                                            </select>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-light" style="background-color: white;"
+                                                    type="button" id="button-addon2"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" heigth="auto"
+                                                        fill="currentColor" class="bi bi-arrow-repeat"
+                                                        style="color: black;" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+                                                        <path fill-rule="evenodd"
+                                                            d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
+                                                    </svg></button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- 5) -->
+                                    <div class="form-group col-lg-6 col-xl-4">
+                                        <label for="county">County</label>
+                                        <div class="input-group ">
+                                            <!-- <input type="text" class="form-control" placeholder="Recipient's username"
+                                                aria-label="Recipient's username" aria-describedby="button-addon2"> -->
+                                            <select class="form-control" id="county">
+                                                <option value="">Select</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-light" style="background-color: white;"
+                                                    type="button" id="button-addon2"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" heigth="auto"
+                                                        fill="currentColor" class="bi bi-arrow-repeat"
+                                                        style="color: black;" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+                                                        <path fill-rule="evenodd"
+                                                            d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
+                                                    </svg></button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!---------------------------------------->
+                                <div class="form-row">
+                                    <!-- 6) -->
+                                    <div class="form-group col-xl-4">
+                                        <label for="zip">Zip Code </label>
+
+                                        <input type="text" class="form-control" id="zip">
+                                    </div>
+                                    <!-- 7) -->
+                                    <div class="form-group col-lg-6 col-xl-4">
+                                        <label for="country">Country</label>
+                                        <div class="input-group ">
+                                            <!-- <input type="text" class="form-control" placeholder="Recipient's username"
+                                                aria-label="Recipient's username" aria-describedby="button-addon2"> -->
+                                            <select class="form-control" id="country">
+                                                <option value="">select</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-light" style="background-color: white;"
+                                                    type="button" id="button-addon2"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" heigth="auto"
+                                                        fill="currentColor" class="bi bi-arrow-repeat"
+                                                        style="color: black;" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+                                                        <path fill-rule="evenodd"
+                                                            d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
+                                                    </svg></button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- 8) -->
+                                    <div class="form-group col-lg-6 col-xl-4">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email">
+                                    </div>
+                                </div>
+                                <!------------------------------------------>
+                                <div class="form-row">
+                                    <!-- 9) -->
+                                    <div class="form-group col-lg-5">
+                                        <label for="numberPhone">Phone Number</label>
+                                        <input type="text" class="form-control" id="numberPhone">
+                                    </div>
+                                    <!-- 10) -->
+                                    <div class="form-group col-lg-2">
+                                        <label for="ext">Ext</label>
+                                        <input type="text" class="form-control" id="ext">
+                                    </div>
+                                    <!-- 11 -->
+                                    <div class="form-group col-lg-5">
+                                        <label for="faxNumber">Fax Number</label>
+                                        <input type="text" class="form-control" id="faxNumber">
+                                    </div>
+                                </div>
+                            </section>
+
+                        </div>
+                        <div class="messageError" id="messageErrorNewPayer">
+                            <p>Please complete correctly the required fiel(s).</p>
+                        </div>
+                        <div class="btnSave">
+                            <div class="btn  btn-outline-info clear borderNone colorHkas colorHover" id="clearNew">
+                                CLEAR
+                            </div>
+                            <button type="submit" class="btn btn-info save backgroundColorHkas colorHover"
+                                id="save">SAVE</button>
+                        </div>
+                    </form>
+
+                </div>
+
+                <!-----------section de editar-----formuario de editar--------------------------------------------------------------------------------------------------->
+
+                <div name="tabs" class="editPayer tab-pane fade" id="pills-contact" role="tabpanel"
+                    aria-labelledby="pills-contact-tab">
+                    <p>Payers>Index>Edit</p>
+                    <form action="#" id="formEditPayer">
+                        <div class="formFlexContainer">
+                            <section class="payerInformation">
+                                <h4 style="border-bottom: 1px solid #002a4e;" id="editId">{1}-United Health Care INC
+                                </h4>
+                                <h4>Payer Information</h4>
+                                <div class="form-row">
+                                    <!--1)-->
+                                    <div class="form-group col-lg-6">
+                                        <label for="nameEdit">Name <span class="requerid">*</span> </label>
+
+                                        <input type="text" class="form-control " id="nameEdit" name="nameEdit"
+                                            maxlength="30">
+                                        <p class="fielReque" id="fielnameEdit">Required Fiel. </p>
+                                    </div>
+                                    <!--2)-->
+                                    <div class="form-group col-lg-6">
+                                        <label for="neicEdit">NEIC ID <span class="requerid">*</span>
+                                        </label>
+                                        <input type="text" class="form-control " id="neicEdit" name="neicEdit"
+                                            maxlength="30">
+                                        <p class="fielReque" id="fielneicEdit">Required Fiel.</p>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <!--3)-->
+                                    <div class="form-group col-lg-6">
+                                        <label for="taxEdit">TAX ID
+                                        </label>
+                                        <input type="text" class="form-control" id="taxEdit">
+                                    </div>
+                                    <!-- 4) -->
+                                    <div class="form-group col-lg-6">
+                                        <label for="contractEdit">Med. Contract ID </label>
+                                        <input type="text" class="form-control" id="contractEdit">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <!--5)-->
+                                    <div class="form-group date datePicker col-lg-6">
+                                        <label for="effectiveEdit">Effective Date</label>
+                                        <input type="text"
+                                            class="form-control input-group-addon glyphicon glyphicon-th "
+                                            id="effectiveEdit" required>
+                                    </div>
+
+                                    <!--6)-->
+                                    <div class="form-group date datePicker col-lg-6">
+                                        <label for="expirationEdit">Expiration Date</label>
+                                        <input type="text"
+                                            class="form-control input-group-addon glyphicon glyphicon-th "
+                                            id="expirationEdit">
+                                    </div>
+
+                                </div>
+                                <div class="form-row">
+                                    <!--7)-->
+                                    <div class="form-group col-lg-6">
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="switch1Edit">
+                                            <label class="custom-control-label" for="switch1Edit">Is Private
+                                                Pay?</label>
+                                        </div>
+                                    </div>
+                                    <!--8)-->
+                                    <div class="form-group col-lg-6">
+                                        <label for="reviewEdit">Auto Review Claim</label>
+                                        <div class="input-group ">
+                                            <!-- <input type="text" class="form-control" placeholder="Recipient's username"
+                                                aria-label="Recipient's username" aria-describedby="button-addon2"> -->
+                                            <select class="form-control" id="reviewEdit">
+                                                <option value="">Select</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-light" style="background-color: white;"
+                                                    type="button" id="button-addon2"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" heigth="auto"
+                                                        fill="currentColor" class="bi bi-arrow-repeat"
+                                                        style="color: black;" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+                                                        <path fill-rule="evenodd"
+                                                            d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
+                                                    </svg></button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- fin de la section payer information-------------------------------------------------------------------------->
+                            </section>
+                            <section class="payerContact">
+                                <h4>Payer Contact</h4>
+                                <div class="form-row">
+                                    <!-- 1) -->
+                                    <div class="form-group col-lg-6">
+                                        <label for="address1Edit">Address 1
+
+                                        </label>
+                                        <input type="text" class="form-control" id="address1Edit">
+                                    </div>
+                                    <!-- 2) -->
+                                    <div class="form-group col-lg-6">
+
+                                        <label for="address2Edit">Address 2</label>
+                                        <input type="text" class="form-control" id="address2Edit">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <!-- 3) -->
+                                    <div class="form-group col-xl-4">
+                                        <label for="cityEdit">City
+                                        </label>
+                                        <input type="text" class="form-control" id="cityEdit">
+                                    </div>
+                                    <!-- 4) -->
+                                    <div class="form-group col-lg-6 col-xl-4">
+                                        <label for="stateEdit">State</label>
+                                        <div class="input-group ">
+                                            <!-- <input type="text" class="form-control" placeholder="Recipient's username"
+                                                aria-label="Recipient's username" aria-describedby="button-addon2"> -->
+                                            <select class="form-control" id="stateEdit">
+                                                <option value="">Select</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-light" style="background-color: white;"
+                                                    type="button" id="button-addon2"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" heigth="auto"
+                                                        fill="currentColor" class="bi bi-arrow-repeat"
+                                                        style="color: black;" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+                                                        <path fill-rule="evenodd"
+                                                            d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
+                                                    </svg></button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- 5) -->
+                                    <div class="form-group col-lg-6 col-xl-4">
+                                        <label for="countyEdit">County</label>
+                                        <div class="input-group ">
+                                            <!-- <input type="text" class="form-control" placeholder="Recipient's username"
+                                                aria-label="Recipient's username" aria-describedby="button-addon2"> -->
+                                            <select class="form-control" id="countyEdit">
+                                                <option value="">Select</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-light" style="background-color: white;"
+                                                    type="button" id="button-addon2"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" heigth="auto"
+                                                        fill="currentColor" class="bi bi-arrow-repeat"
+                                                        style="color: black;" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+                                                        <path fill-rule="evenodd"
+                                                            d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
+                                                    </svg></button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!---------------------------------------->
+                                <div class="form-row">
+                                    <!-- 6) -->
+                                    <div class="form-group col-xl-4">
+                                        <label for="zipEdit">Zip Code</label>
+                                        <input type="text" class="form-control" id="zipEdit">
+                                    </div>
+                                    <!-- 7) -->
+                                    <div class="form-group col-lg-6 col-xl-4">
+                                        <label for="countryEdit">Country</label>
+                                        <div class="input-group ">
+                                            <!-- <input type="text" class="form-control" placeholder="Recipient's username"
+                                                aria-label="Recipient's username" aria-describedby="button-addon2"> -->
+                                            <select class="form-control" id="countryEdit">
+                                                <option value="">select</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-light" style="background-color: white;"
+                                                    type="button" id="button-addon2"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" heigth="auto"
+                                                        fill="currentColor" class="bi bi-arrow-repeat"
+                                                        style="color: black;" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+                                                        <path fill-rule="evenodd"
+                                                            d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
+                                                    </svg></button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- 8) -->
+                                    <div class="form-group col-lg-6 col-xl-4">
+                                        <label for="emailEdit">Email</label>
+                                        <input type="email" class="form-control" id="emailEdit">
+                                    </div>
+                                </div>
+                                <!------------------------------------------>
+                                <div class="form-row">
+                                    <!-- 9) -->
+                                    <div class="form-group col-lg-5">
+                                        <label for="numberPhoneEdit">Phone Number</label>
+                                        <input type="text" class="form-control" id="numberPhoneEdit">
+                                    </div>
+                                    <!-- 10) -->
+                                    <div class="form-group col-lg-2">
+                                        <label for="extEdit">Ext</label>
+                                        <input type="text" class="form-control" id="extEdit">
+                                    </div>
+                                    <!-- 11 -->
+                                    <div class="form-group col-lg-5">
+                                        <label for="faxNumberEdit">Fax Number</label>
+                                        <input type="text" class="form-control" id="faxNumberEdit">
+                                    </div>
+                                </div>
+                            </section>
+
+                        </div>
+                        <div class="messageError" id="messageErrorEditPayer">
+                            <p>Please complete correctly the required fiel(s).</p>
+                        </div>
+                        <div class="btnSave">
+                            <div class="btn btn-outline-info clear borderNone colorHkas colorHover" name="clearEdit"
+                                id="clearEdit">CLEAR</div>
+                            <button type="submit" class="btn btn-info save backgroundColorHkas colorHover borderNone"
+                                id="saveEdit">SAVE</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-------------------modales---------------------------------------------------------------------------------------------->
+    <!-- ----------------yes there is tabs payers---------------------------------------------------------------------------------- -->
+    <!-- Button trigger modal -->
+    <button type="button" id="btnModalPayers" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Launch demo modal
+    </button>
+
+    <!-- Modal ya hay payers cerar o borrar ese modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="indicationBtnModal">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        Modal</button>
+                    <button type="button" data-dismiss="modal" class="btn backgroundColorHkas colorHover"
+                        style="color: white;" id="btndModalDeleteTabs">delete
+                        tab</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ---------------------modal delete payer--------------------------------------------------------------------------------------------------- -->
+
+    <!-- Button trigger modal -->
+    <button type="button" id="btnModalDelete" class="btn btn-primary" data-toggle="modal"
+        data-target="#exampleModalCenter">
+        Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalCenterTitle">Delete</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body  text-center">
+                    <i class="fas fa-times-circle circleDelete"></i>
+                    <h4 class="text-danger">Are you sure you want to remove this record?</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn borderNone colorHover colorHkas"
+                        data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-outline-danger" data-dismiss="modal"
+                        id="deletePayer">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-----------------------modal envio excitoso------------------------------------------------------------------------------------------------>
+
+    <!-- Button trigger modal -->
+    <button type="button" id="btnModalSuccessful" class="btn btn-primary" data-toggle="modal"
+        data-target="#exampleModalSucces">
+        Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalSucces" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalCenterTitle"> sent successfully </h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body  text-center">
+                    <h4 class="colorHkas" id="modalMessage"></h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn borderNone colorHkas colorHover" data-dismiss="modal">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!----------------------------------------------------------------------------------------------------------------------->
+    <!--iconos de fontawesome-->
+    <script src="https://kit.fontawesome.com/1dc4c89751.js" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+        crossorigin="anonymous"></script>
+    <!------------------------------------------------------------------------------------------------------------------------>
+    <!---datepicker-inline------------->
+    <script src="./bootstrap-datepicker.min.js"></script>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------>
+
+    <!-- mis archivos script -->
+    <script src="./zmain.js"></script>
+    <!-- <script src="./zform.js"></script> -->
+    <!-- <script src="pruebas.js"></script> -->
+</body>
+
+</html>
